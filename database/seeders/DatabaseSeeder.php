@@ -1,9 +1,12 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+//use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\subject;
+use App\Models\Departement;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,13 +15,22 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run() 
     {
-        // \App\Models\User::factory(10)->create();
+        Departement::create([
+            'name' => 'Computer science',
+            'code' => 'CS'
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Departement::create([
+            'name' => 'Infprmation System',
+            'code' => 'IS'
+        ]);
+
+        Departement::create([
+            'name' => 'Information Technology',
+            'code' => 'IT'
+        ]);
+
     }
 }
