@@ -2,7 +2,7 @@
 
 @section('content')
     
-<form action="{{route('doctor.store')}}" method="POST">
+<form action="/doctor" method="POST">
     @csrf
     <div>
         <label> Email </label>

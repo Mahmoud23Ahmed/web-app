@@ -7,6 +7,16 @@
     <title>student pdf</title>
 </head>
 <body>
-    
+    <h1> all pdf <h2>
+ 
+        @foreach ($path as $url)
+            {{$url['url']}}
+            <a href="{{route("file.download",['path' => $url['url']])}}">
+                |Download
+              </div>  
+        
+            
+        @endforeach
+
 </body>
 </html>

@@ -10,5 +10,7 @@ class Student extends Model
     use HasFactory;
     protected $table = 'student';
 
-    protected $fillable = ['academicnum', 'username' , 'password' , 'departement_id'];
+    protected $fillable = ['academicnum', 'Email' , 'password' , 'departement_id'];
+    
 }
+

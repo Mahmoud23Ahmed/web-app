@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="admin1.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <style>
-
+    
 body {
     align-items: center;
     background-color: #000;
@@ -20,7 +19,7 @@ body {
     background-color: #2a5555;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
+    height: 350px;
     padding: 20px;
     width: 320px;
   }
@@ -60,19 +59,11 @@ body {
     box-sizing: border-box;
     color: #eee;
     font-size: 18px;
-    height: 50px;
+    height: 100%;
     outline: 0;
     padding: 4px 20px 0;
     width:100%;
   }
-  
-  
-  
-  
-  
-  
-  
-  
   
   .submit {
     background-color: rgb(0, 0, 0);
@@ -83,63 +74,64 @@ body {
     cursor: pointer;
     font-size: 18px;
     height: 50px;
-    margin-top: 30px;
+    margin-top: 38px;
      outline: 0;
     text-align: center;
     width: 100%;
-    
   }
   
   .submit:active {
     background-color: #06b;
   }
-  
+  a{
 
-  #aaa{
-    padding-top: 50px;
-margin-top: 50px;
-    padding-left: 120px;
-
-    color:rgb(174, 168, 168); 
-
-    text-decoration: none;
-
-  }
-
+    color: rgb(174, 168, 168);
+    padding-left: 40%;
+    line-clamp: none;
+    
+      }
+    
+    
+      #parent{
+    margin-top: 15px;
+        white-space: nowrap;
+        margin-left: 40px;
+      }
+    
+      .child{
+    
+    display: inline-block;
+    
+      }
+    
+      a{
+    
+        text-decoration: none;
+      }
+    
    </style>
 </head>
 <body>
     
     <div class="form">
         <div class="title">Welcome</div>
-        <div class="subtitle">How can i help you ?</div>
+        <div class="subtitle">Let's upload your file!</div>
 
         
-          
+            <div class="input-container ic1">
+                <input type="file" class="custom-file-input" id="customFile">
                 
-        <a href="admin2.html">
-            <button type="text" class="submit" >Create department</button>
-          </a>
-
-          <a href="admin3.html">
-            <button type="text" class="submit" >Create subject</button>
-          </a>
-
-             
+              </div>
         
-         <a href="admin3.html">
-           <button type="text" class="submit" >Add student or doctor</button>
-         </a> 
         
-         <a href="">
-            <button type="text" class="submit" >Create attendance</button>
-          </a>
-          <br><br>
-          <a  href="index.html" id="aaa">Home</a>
+        
+        <button type="text"  class="submit">next</button>
 
+        <div id="parent">
+            <div class="child"> <a  href="docter.html">Back</a> </div><div class="child
+            "></div><a class="child" href="index.html">Home</a></div>
+      </div>
 
-
-    </div>
 
 </body>
 </html>

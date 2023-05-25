@@ -1,28 +1,44 @@
 <?php
 
 namespace App\Http\Controllers;
+use PDF;
+use Auth;
+use Validator;
 use App\Models\Student;
-use App\Models\departements;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\App;
+use Barryvdh\DomPDF\Facade as DomPDF;
 
-
-
-class studentController extends Controller
+class GeneratePdf extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+    public function generate(){
         $students = Student::get();
-        return view('student.index' , ['Student'=>$students]);
-        
+        $pdf = Pdf::loadView('student.show', array('students'=>$students))->setOptions(['defaultFont' => 'sans-serif']);
+        $pdf->setPaper('A4','landscape');
+        return $pdf->stream();
     }
+    // public function list(){
+    //     $student = Student::get();
+    //     return view('update' , ['students'=>$student]);
+
+    // }
+    // public function index()
+    // {
+    //     return view('update');
+    // }
     
+    // public function import_student(){
+
+    // }
+    // public function export_student(){
+    //     $pdf = PDF::loadView('pdf.student');
+    //     return $pdf->download('student.pdf') ;
+ 
+    // }
+    // public function export_student_pdf(){
+
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -31,8 +47,7 @@ class studentController extends Controller
      */
     public function create()
     {
-        $departements = departements::get();
-        return view('student.create' , ['departements' => $departements]);
+        //
     }
 
     /**
@@ -43,16 +58,7 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-        $formFields = $request->validate([
-            'academicnum'=>'required',
-            'Email'=>'required',
-            'password'=>'required',
-            'departement_id'=>'required',
-       ]);
-       
-        Student::create($formFields);
-        $students = Student::get();
-       return view('student.show' , ['students' => $students]); 
+        //
     }
 
     /**
@@ -61,9 +67,9 @@ class studentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $students)
+    public function show($id)
     {
-        return view('student.show' , [ 'students' => $students]);
+        //
     }
 
     /**
@@ -95,8 +101,8 @@ class studentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $students)
+    public function destroy($id)
     {
-        $students->delete();
+        //
     }
 }

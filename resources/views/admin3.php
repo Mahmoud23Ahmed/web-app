@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="admin1.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <style>
-
-body {
+   <style>body {
     align-items: center;
     background-color: #000;
     display: flex;
@@ -20,7 +17,7 @@ body {
     background-color: #2a5555;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
+    height: 540px;
     padding: 20px;
     width: 320px;
   }
@@ -51,7 +48,17 @@ body {
     margin-top: 40px;
   }
   
-  
+  .ic2 {
+    margin-top: 15px;
+  }
+
+  .ic3 {
+    margin-top: 15px;
+  }
+
+  .ic4 {
+    margin-top: 15px;
+  }
   
   .input {
     background-color: #303245;
@@ -60,17 +67,11 @@ body {
     box-sizing: border-box;
     color: #eee;
     font-size: 18px;
-    height: 50px;
+    height: 100%;
     outline: 0;
     padding: 4px 20px 0;
-    width:100%;
+    width: 100%;
   }
-  
-  
-  
-  
-  
-  
   
   
   
@@ -87,59 +88,75 @@ body {
      outline: 0;
     text-align: center;
     width: 100%;
-    
   }
   
   .submit:active {
     background-color: #06b;
   }
   
+  a{
 
-  #aaa{
-    padding-top: 50px;
-margin-top: 50px;
-    padding-left: 120px;
-
-    color:rgb(174, 168, 168); 
-
-    text-decoration: none;
-
-  }
-
-   </style>
+    color: rgb(174, 168, 168);
+    padding-left: 40%;
+    line-clamp: none;
+    
+      }
+    
+    
+      #parent{
+    margin-top: 20px;
+        white-space: nowrap;
+        margin-left: 40px;
+      }
+    
+      .child{
+    
+    display: inline-block;
+    
+      }
+    
+      a{
+    
+        text-decoration: none;
+      }</style>
 </head>
 <body>
     
+
     <div class="form">
         <div class="title">Welcome</div>
-        <div class="subtitle">How can i help you ?</div>
+        <div class="subtitle">Let's create your subject </div>
 
-        
+        <div class="input-container ic1">
+          <input id="firstname" class="input" type="text" placeholder=" Name " />
           
-                
-        <a href="admin2.html">
-            <button type="text" class="submit" >Create department</button>
-          </a>
+         
+        </div>
 
-          <a href="admin3.html">
-            <button type="text" class="submit" >Create subject</button>
-          </a>
+        <div class="input-container ic2">
+          <input id="lastname" class="input" type="text" placeholder=" Code" />
+          
+          
+        </div>
 
-             
-        
-         <a href="admin3.html">
-           <button type="text" class="submit" >Add student or doctor</button>
-         </a> 
-        
-         <a href="">
-            <button type="text" class="submit" >Create attendance</button>
-          </a>
-          <br><br>
-          <a  href="index.html" id="aaa">Home</a>
+        <div class="input-container ic3">
+          <input id="email" class="input" type="text" placeholder=" Department " />
+         
+         
+        </div>
 
+        <div class="input-container ic4">
+            <input id="email" class="input" type="text" placeholder="Previous subjects " />
+            
+            
+          </div>
+        <button type="text" class="submit">Add</button>
+        <div id="parent">
+            <div class="child"> <a  href="admin1.html">Back</a> </div><div class="child
+            "></div><a class="child" href="index.html">Home</a></div>
+           
+      </div>
 
-
-    </div>
 
 </body>
 </html>

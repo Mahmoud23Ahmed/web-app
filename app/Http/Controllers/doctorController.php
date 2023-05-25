@@ -38,13 +38,13 @@ class doctorController extends Controller
     {
         $formFields = $request->validate([
             'academicnum'=>'required',
-            'username'=>'required',
+            'Email'=>'required',
             'password'=>'required',
        ]);
        
         doctors::create($formFields);
-        $subject = subject::get();
-       return view('doctor.show' , ['subjects' => $subject]); 
+        $doctors = doctors::get();
+       return view('doctor.show' , ['doctors' => $doctors]); 
     }
 
     /**
@@ -53,10 +53,10 @@ class doctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(doctor $doctors)
+    public function show()
     {
-        $subject = subject::get();
-        return view('doctor.show' , ['subjects' => $subject]);
+        $doctors = doctors::get();
+        return view('doctor.show' , ['doctors' => $doctors]);
     }
 
     /**
@@ -88,8 +88,12 @@ class doctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(doctor $doctors)
+    public function destroy(Request $request,$id)
+
     {
-        $doctors->delete();
+        $doctor = doctors::where("academicnum",$id)->first();
+        $doctor->delete();
     }
+
 }
+

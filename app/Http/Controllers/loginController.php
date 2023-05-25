@@ -1,98 +1,54 @@
 <?php
 
 namespace App\Http\Controllers;
-use PDF;
-use Auth;
-use Validator;
-use App\Models\Student;
+
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\App;
-use Barryvdh\DomPDF\Facade as DomPDF;
+use Illuminate\Support\Facades\Auth;
 
-class loginController extends Controller
+class LoginController extends Controller
 {
-    public function generate(){
-        $students = Student::get();
-        $pdf = Pdf::loadView('student.show', array('students'=>$students))->setOptions(['defaultFont' => 'sans-serif']);
-        $pdf->setPaper('A4','landscape');
-        return $pdf->stream();
-    }
-    // public function list(){
-    //     $student = Student::get();
-    //     return view('update' , ['students'=>$student]);
-
-    // }
-    // public function index()
-    // {
-    //     return view('update');
-    // }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
     
-    // public function import_student(){
-
-    // }
-    // public function export_student(){
-    //     $pdf = PDF::loadView('pdf.student');
-    //     return $pdf->download('student.pdf') ;
- 
-    // }
-    // public function export_student_pdf(){
-
-    // }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function login(Request $request)
     {
-        //
+        
+        $email =  $request->get('email');
+        $password = $request->get('password');
+        
+
+
+        if($email = "admin@admin" && $password="123"){
+        
+            return redirect("/subjects");
+        }
+        
+        if($email = "student@student" && $password="123"){
+            return redirect("/download");
+        }
+
+        
+        if($email = "doctor@doctor" && $password="123"){
+            return redirect("/upload");
+        }        
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 
     /**
